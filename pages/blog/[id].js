@@ -1,4 +1,5 @@
 import { client } from '../../libs/client';
+import CommonMeta from '../../components/CommonMeta.js'
 import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
 import styles from '../../styles/Home.module.scss';
@@ -6,6 +7,7 @@ import styles from '../../styles/Home.module.scss';
 export default function BlogId({ blog }) {
   return (
     <div className="wrapper">
+      <CommonMeta title={blog.title} description={blog.description} uri={`/blog/${blog.id}`} />
       <Header />
         <main className={`main ${styles.main}`}>
           <h1 className={styles.title}>{blog.title}</h1>

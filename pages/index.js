@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { client } from "../libs/client";
+import CommonMeta from '../components/CommonMeta.js'
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 
 export default function Home({ blog }) {
   return (
     <div className="wrapper">
+      <CommonMeta />
       <Header />
       <main className="main">
         <ul>
