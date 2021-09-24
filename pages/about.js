@@ -6,7 +6,7 @@ import Footer from '../components/Footer.js';
 export default function About() {
   return (
     <div className="wrapper">
-      <CommonMeta title="会社概要 | 株式会社フェアグラウンド" description="株式会社フェアグラウンドの会社概要です。" uri="/about" />
+      <CommonMeta title="会社概要 | 株式会社フェアグラウンド" description="株式会社フェアグラウンドの会社概要です。" uri="/about/" />
       <Header />
       <main className="main">
         <h1>会社概要</h1>
