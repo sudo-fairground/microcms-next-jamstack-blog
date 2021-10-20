@@ -1,7 +1,8 @@
 import Link from "next/link";
+import styles from '../styles/components/Footer.module.scss';
 
 const Footer = () => (
-  <footer>
+  <footer className={styles.footer}>
     <ul>
       <li>
         <Link href="/">

@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { client } from "../libs/client";
 import CommonMeta from '../components/CommonMeta.js'
-import Header from '../components/Header.js';
-import Footer from '../components/Footer.js';
+import Layout from '../components/Layout.js';
+import styles from '../styles/pages/Home.module.scss';
 
 const Home = ({ blog }) => (
-  <div className="wrapper">
+  <>
     <CommonMeta />
-    <Header />
-    <main className="main">
-      <ul>
+    <Layout>
+      <ul className={styles.blogList}>
         {blog.map((blog) => (
           <li key={blog.id}>
             <Link href={`/blog/${blog.id}`}>
@@ -18,9 +17,8 @@ const Home = ({ blog }) => (
           </li>
         ))}
       </ul>
-    </main>
-    <Footer />
-  </div>
+    </Layout>
+  </>
 );
 
 // データをテンプレートに受け渡す部分の処理を記述します

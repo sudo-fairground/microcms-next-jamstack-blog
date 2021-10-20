@@ -1,0 +1,13 @@
+.header {
+  background-color: #eee;
+}
+
+.headerNav {
+  width: 960px;
+  margin: 0 auto;
+
+  & > ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}

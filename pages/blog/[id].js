@@ -1,26 +1,23 @@
 import { client } from '../../libs/client';
 import CommonMeta from '../../components/CommonMeta.js'
-import Header from '../../components/Header.js';
-import Footer from '../../components/Footer.js';
-import styles from '../../styles/Home.module.scss';
+import Layout from '../../components/Layout.js';
+import styles from '../../styles/pages/BlogId.module.scss';
 
 const BlogId = ({ blog }) => (
-  <div className="wrapper">
+  <>
     <CommonMeta title={blog.title} description={blog.description} uri={`/blog/${blog.id}/`} />
-    <Header />
-      <main className={`main ${styles.main}`}>
-        <h1 className={styles.title}>{blog.title}</h1>
-        <p className={styles.publishedAt}>{blog.publishedAt}</p>
-        <p className="category">{blog.category && `${blog.category.name}`}</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${blog.body}`,
-          }}
-          className={styles.post}
-        />
-      </main>
-    <Footer />
-  </div>
+    <Layout>
+      <h1 className={styles.title}>{blog.title}</h1>
+      <p className={styles.publishedAt}>{blog.publishedAt}</p>
+      <p className="category">{blog.category && `${blog.category.name}`}</p>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `${blog.body}`,
+        }}
+        className={styles.post}
+      />
+    </Layout>
+  </>
 );
 
 // 静的生成のためのパスを指定します
