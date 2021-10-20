@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from '../styles/components/Layout.module.scss';
 
 const Layout = ({ children, home }) => (
-  <div className={styles.wrapper}>
+  <>
     <header className={styles.header}>
       <div className={styles.container}>
         {home ? (
@@ -45,7 +45,7 @@ const Layout = ({ children, home }) => (
         </ul>
       </div>
     </footer>
-  </div>
+  </>
 );
 
 export default Layout

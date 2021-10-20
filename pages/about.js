@@ -15,4 +15,12 @@ const About = () => (
   </>
 );
 
+export const getStaticProps = async () => {
+  return {
+    props: {
+      pageClass: 'about',
+    },
+  };
+};
+
 export default About

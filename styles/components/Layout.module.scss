@@ -1,12 +1,6 @@
 @import "../variables";
 @import "../mixin";
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .header {
   padding: 20px 0;
   background-color: #ffddcc;

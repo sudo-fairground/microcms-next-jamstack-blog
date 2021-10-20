@@ -4,7 +4,7 @@ import CommonMeta from '../components/CommonMeta.js'
 import Layout from '../components/Layout.js';
 import styles from '../styles/pages/Home.module.scss';
 
-const Home = ({ blog }) => (
+const Home = ({ pageClass, blog }) => (
   <>
     <CommonMeta />
     <Layout home>
@@ -32,6 +32,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       blog: data.contents,
+      pageClass: 'home',
     },
   };
 };

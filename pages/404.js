@@ -10,4 +10,12 @@ const Custom404 = () => (
   </Layout>
 );
 
+export const getStaticProps = async () => {
+  return {
+    props: {
+      pageClass: '404',
+    },
+  };
+};
+
 export default Custom404
