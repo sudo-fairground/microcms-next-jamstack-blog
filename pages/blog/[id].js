@@ -4,26 +4,24 @@ import Header from '../../components/Header.js';
 import Footer from '../../components/Footer.js';
 import styles from '../../styles/Home.module.scss';
 
-export default function BlogId({ blog }) {
-  return (
-    <div className="wrapper">
-      <CommonMeta title={blog.title} description={blog.description} uri={`/blog/${blog.id}/`} />
-      <Header />
-        <main className={`main ${styles.main}`}>
-          <h1 className={styles.title}>{blog.title}</h1>
-          <p className={styles.publishedAt}>{blog.publishedAt}</p>
-          <p className="category">{blog.category && `${blog.category.name}`}</p>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `${blog.body}`,
-            }}
-            className={styles.post}
-          />
-        </main>
-      <Footer />
-    </div>
-  );
-}
+const BlogId = ({ blog }) => (
+  <div className="wrapper">
+    <CommonMeta title={blog.title} description={blog.description} uri={`/blog/${blog.id}/`} />
+    <Header />
+      <main className={`main ${styles.main}`}>
+        <h1 className={styles.title}>{blog.title}</h1>
+        <p className={styles.publishedAt}>{blog.publishedAt}</p>
+        <p className="category">{blog.category && `${blog.category.name}`}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${blog.body}`,
+          }}
+          className={styles.post}
+        />
+      </main>
+    <Footer />
+  </div>
+);
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
@@ -44,3 +42,5 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
+export default BlogId
