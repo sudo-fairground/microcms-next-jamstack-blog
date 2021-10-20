@@ -1,4 +1,46 @@
-.main {
-  width: 960px;
-  margin: 0 auto;
+@import "../variables";
+@import "../mixin";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 20px 0;
+  background-color: #ffddcc;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @include container;
+  }
+
+  .headerLogoH1,
+  .headerLogo {
+    width: 200px;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .headerNav {
+    flex-grow: 1;
+
+    & > ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.footer {
+  margin-top: auto;
+  padding: 30px 0;
+  background-color: #e3e3e3;
+
+  @include screen(tb-and-pc) {
+    padding: 60px 0;
+  }
 }

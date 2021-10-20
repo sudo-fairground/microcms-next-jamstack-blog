@@ -1,0 +1,52 @@
+//
+// Mixin
+//
+
+// メディアクエリ
+@mixin screen($type) {
+	@media #{ map-get($breakPoint, $type) } {
+		@content;
+	}
+}
+
+// フォントサイズ（remに変換）
+@mixin font-size-rem-sp($size) {
+	font-size: #{ $size / $fontSizeSP }rem;
+}
+@mixin font-size-rem-pc($size) {
+	font-size: #{ $size / $fontSizePC }rem;
+}
+
+@mixin container {
+	width: 100%;
+	padding: 0 5.334%;
+
+	@include screen(tb-and-pc) {
+		max-width: #{$widthContainer + 80px};
+		margin: 0 auto;
+		padding: 0 40px;
+	}
+}
+
+@mixin article {
+	padding: 60px 0;
+
+	.articleTitle {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+}
+
+@mixin cf {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin hover-opacity {
+	&:hover {
+		opacity: .7;
+	}
+}

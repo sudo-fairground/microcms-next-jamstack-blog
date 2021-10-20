@@ -7,15 +7,19 @@ const BlogId = ({ blog }) => (
   <>
     <CommonMeta title={blog.title} description={blog.description} uri={`/blog/${blog.id}/`} />
     <Layout>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
-      <p className="category">{blog.category && `${blog.category.name}`}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-        className={styles.post}
-      />
+      <article className="article">
+        <div className="container">
+          <h1 className={styles.title}>{blog.title}</h1>
+          <p className={styles.publishedAt}>{blog.publishedAt}</p>
+          <p className="category">{blog.category && `${blog.category.name}`}</p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${blog.body}`,
+            }}
+            className={styles.post}
+          />
+        </div>
+      </article>
     </Layout>
   </>
 );

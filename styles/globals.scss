@@ -1,9 +1,42 @@
-html,
+@import "sanitize";
+@import "variables";
+@import "mixin";
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: $fontFamily;
+  color: $textColor;
+  font-size: $fontSizeSP;
+  line-height: 1.8;
+
+  @include screen(tb-and-pc) {
+    font-size: $fontSizePC;
+  }
+}
+
 body {
-  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5,
+dl, dt, dd, figure {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+table th {
+  font-weight: normal;
 }
 
 a {
@@ -11,6 +44,31 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+.pc {
+	@include screen(sp) {
+		display: none !important;
+	}
+}
+
+.sp {
+	@include screen(tb-and-pc) {
+		display: none !important;
+	}
+}
+
+.section, .article {
+	@include article;
+}
+
+.container {
+	@include container;
 }

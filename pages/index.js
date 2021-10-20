@@ -7,16 +7,20 @@ import styles from '../styles/pages/Home.module.scss';
 const Home = ({ blog }) => (
   <>
     <CommonMeta />
-    <Layout>
-      <ul className={styles.blogList}>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <Layout home>
+      <section className="section">
+        <div className="container">
+          <ul className={styles.blogList}>
+            {blog.map((blog) => (
+              <li key={blog.id}>
+                <Link href={`/blog/${blog.id}`}>
+                  <a>{blog.title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </Layout>
   </>
 );
