@@ -1,16 +1,15 @@
-import Link from "next/link";
-import styles from '../styles/components/Layout.module.scss';
+import Link from "next/link"
 
 const Layout = ({ children, home }) => (
   <>
-    <header className={styles.header}>
-      <div className={styles.container}>
+    <header id="header" className="header">
+      <div className="container">
         {home ? (
-          <h1 className={styles.headerLogoH1}>home</h1>
+          <h1 className="header-logo">home</h1>
         ) : (
-          <div className={styles.headerLogo}>not home</div>
+          <div className="header-logo">not home</div>
         )}
-        <nav className={styles.headerNav}>
+        <nav className="header-nav">
           <ul>
             <li>
               <Link href="/">
@@ -26,10 +25,10 @@ const Layout = ({ children, home }) => (
         </nav>
       </div>
     </header>
-    <main className={styles.main}>
+    <main id="main" className="main">
       {children}
     </main>
-    <footer className={styles.footer}>
+    <footer id="footer" className="footer">
       <div className="container">
         <ul>
           <li>

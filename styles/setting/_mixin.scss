@@ -17,26 +17,6 @@
 	font-size: #{ $size / $fontSizePC }rem;
 }
 
-@mixin container {
-	width: 100%;
-	padding: 0 5.334%;
-
-	@include screen(tb-and-pc) {
-		max-width: #{$widthContainer + 80px};
-		margin: 0 auto;
-		padding: 0 40px;
-	}
-}
-
-@mixin article {
-	padding: 60px 0;
-
-	.articleTitle {
-		margin-bottom: 1em;
-		text-align: center;
-	}
-}
-
 @mixin cf {
 	&:after {
 		content: '';

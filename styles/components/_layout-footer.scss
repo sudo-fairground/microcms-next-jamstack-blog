@@ -1,0 +1,12 @@
+/*---------------------------------------
+ * Footer
+ ---------------------------------------*/
+.footer {
+	margin-top: auto;
+	padding: 30px 0;
+	background-color: #e3e3e3;
+
+	@include screen(tb-and-pc) {
+		padding: 60px 0;
+	}
+}

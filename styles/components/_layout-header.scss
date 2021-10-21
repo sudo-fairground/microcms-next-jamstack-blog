@@ -1,0 +1,28 @@
+/*---------------------------------------
+ * Header
+ ---------------------------------------*/
+.header {
+	padding: 20px 0;
+	background-color: #ffddcc;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header-logo {
+		width: 200px;
+		font-size: 2em;
+		font-weight: bold;
+		line-height: 1;
+	}
+
+	.header-nav {
+		flex-grow: 1;
+
+		& > ul {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+}

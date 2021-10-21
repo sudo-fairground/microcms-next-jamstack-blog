@@ -1,0 +1,27 @@
+/*---------------------------------------
+ * Print
+ ---------------------------------------*/
+@media print {
+	body {
+		zoom: 65%;
+		-webkit-print-color-adjust: exact;
+	}
+	header {
+		position: absolute;
+	}
+	.to-top {
+		display: none;
+	}
+}
+@media print and (-ms-high-contrast: none) {
+	@page {
+		size: A4;
+		margin: 12.7mm 9.7mm;
+	}
+	body {
+		zoom: 1.8;
+		width: 1200px;
+		transform: scale(0.5);
+		transform-origin: 0 0;
+	}
+}

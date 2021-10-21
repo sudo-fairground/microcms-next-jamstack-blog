@@ -1,7 +1,6 @@
-import { client } from '../../libs/client';
+import { client } from '../../libs/client'
 import CommonMeta from '../../components/CommonMeta.js'
-import Layout from '../../components/Layout.js';
-import styles from '../../styles/pages/BlogId.module.scss';
+import Layout from '../../components/Layout.js'
 
 const BlogId = ({ blog }) => (
   <>
@@ -9,14 +8,14 @@ const BlogId = ({ blog }) => (
     <Layout>
       <article className="article">
         <div className="container">
-          <h1 className={styles.title}>{blog.title}</h1>
-          <p className={styles.publishedAt}>{blog.publishedAt}</p>
+          <h1 className="blog-title">{blog.title}</h1>
+          <p className="blog-published-at">{blog.publishedAt}</p>
           <p className="category">{blog.category && `${blog.category.name}`}</p>
           <div
             dangerouslySetInnerHTML={{
               __html: `${blog.body}`,
             }}
-            className={styles.post}
+            className="blog-post"
           />
         </div>
       </article>
@@ -40,7 +39,7 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       blog: data,
-      pageClass: 'blogDetail',
+      pageClass: 'blog-detail',
     },
   };
 };
