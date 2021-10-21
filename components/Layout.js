@@ -1,4 +1,5 @@
 import Link from "next/link"
+import ActiveLink from '../components/ActiveLink'
 
 const Layout = ({ children, home }) => (
   <>
@@ -12,14 +13,14 @@ const Layout = ({ children, home }) => (
         <nav className="header-nav">
           <ul>
             <li>
-              <Link href="/">
+              <ActiveLink href="/" activeClassName="active">
                 <a>Home</a>
-              </Link>
+              </ActiveLink>
             </li>
             <li>
-              <Link href="/about">
+              <ActiveLink href="/about" activeClassName="active">
                 <a>About</a>
-              </Link>
+              </ActiveLink>
             </li>
           </ul>
         </nav>

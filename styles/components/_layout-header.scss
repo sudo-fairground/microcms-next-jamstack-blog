@@ -23,6 +23,12 @@
 		& > ul {
 			display: flex;
 			justify-content: space-around;
+
+			& > li {
+				.active {
+					border-bottom: solid 2px #f00;
+				}
+			}
 		}
 	}
 }
